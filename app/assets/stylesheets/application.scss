@@ -1,5 +1,7 @@
-@import "./config/variable";
+@import "config/colors";
+@import "config/colors";
+@import "modules/flash";
 @import "font-awesome";
-@import "./reset";
+@import "modules/user";
+@import "reset";
 @import "posts";
-
