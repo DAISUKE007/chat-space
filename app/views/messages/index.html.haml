@@ -15,32 +15,26 @@
         =link_to "/groups/1/edit/" do
           Edit
 
-    .right-contents__main
-      .right-contents__main__message
-        .right-contents__main__message__upper-info
-          %p.right-contents__main__message__upper-info__name
-            test-user
-          %p.right-contents__main__message__upper-info__date
-            2019/10/18/(Fri) 12:15:30
-        %p.right-contents__main__message__text
-          こんにちは
-      .right-contents__main__message
-        .right-contents__main__message__upper-info
-          %p.right-contents__main__message__upper-info__name
-            test-user
-          %p.right-contents__main__message__upper-info__date
-            2019/10/18/(Fri) 12:15:30
-        %p.right-contents__main__message__text
-          おはようございます
+    .messages
+      = render @messages
+
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
 
-    .form      
-      %form#new_message.new_message{"accept-charset": "UTF-8", action: "/", enctype: "multipart/form-data", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}/
-        %input{name: "authenticity_token", type: "hidden", value: "oolOUrrqXv3uB5+IlqgC2EE7zkbo6ooOf0pZk6k5kwk80EYA+UAAlX+ZFoMI6Stlw1JXZjEM36LPmO63sERYTw=="}/
-        .input-box
-          %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.input-box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
-        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+    -# .form      
+    -#   %form#new_message.new_message{"accept-charset": "UTF-8", action: "/", enctype: "multipart/form-data", method: "post"}
+    -#     %input{name: "utf8", type: "hidden", value: "✓"}/
+    -#     %input{name: "authenticity_token", type: "hidden", value: "oolOUrrqXv3uB5+IlqgC2EE7zkbo6ooOf0pZk6k5kwk80EYA+UAAlX+ZFoMI6Stlw1JXZjEM36LPmO63sERYTw=="}/
+    -#     .input-box
+    -#       %input#message_content.input-box__text{name: "message[content]", placeholder: "type a message", type: "text"}/
+    -#       %label.input-box__image{for: "message_image"}
+    -#         %i.fa.fa-image
+    -#         %input#message_image.input-box__image__file{name: "message[image]", type: "file"}/
+    -#     %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
