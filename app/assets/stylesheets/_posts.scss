@@ -1,7 +1,16 @@
 .wrapper {
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
+
+  .notice {
+    font-size: 16px;
+    width: 100vw;
+    background-color: #38AEF0;
+    color: $white;
+    text-align: center;
+  }
+
   .chat-side {
     width: 300px;
     float: left;
@@ -51,10 +60,10 @@
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
-      a {text-decoration: none;}
       box-sizing: border-box;
 
       .group {
+        margin-bottom: 40px;
     
         &__name {
           font-size: 15px;
@@ -65,15 +74,14 @@
         &__message {
           font-size: 11px;
           font-weight: bold;
-          color: $white; 
-          margin-bottom: 40px;
+          color: $white;
         }
       }
     }
   }
 
   .right-contents {
-    width: calc(100vw - 300px);
+    width: calc(100% - 300px);
     float: right;
 
     &__header {
@@ -116,20 +124,21 @@
       }
     }
 
-    &__main {
+    .messages {
       height: calc(100vh - 190px);
       background-color: #fafafa;
       padding: 46px 40px;
       box-sizing: border-box;
+      overflow: scroll;
 
-      &__message {
+      .message {
         padding-bottom: 40px;
 
-        &__upper-info {
+        .upper-message {
           display: flex;
           margin-bottom: 10px;
 
-          &__name {
+          &__user-name {
             font-size: 16px;
             font-weight: bold;
             color: #434A54;
@@ -142,11 +151,18 @@
           }
         }
 
-        &__text {
+        .lower-message {
           font-size: 14px;
           color: #434A54;
           margin-bottom: 10px;
 
+          // &__content {
+
+          // }
+
+          // &__image {
+
+          // }
         }
       }
     }
@@ -182,11 +198,8 @@
             &__file {
               display: none;
             }
-          }
-
-          
-        }
-        
+          } 
+        } 
         .submit-btn {
           width: 100px;
           height: 50px;
