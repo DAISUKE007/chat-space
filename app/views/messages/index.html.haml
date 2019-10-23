@@ -6,11 +6,12 @@
     .right-contents__header
       .right-contents__header__box
         %h2.right-contents__header__box__group
-          test-group
+          =@group.name
         %ul.right-contents__header__box__member-list
           Member：
           %li.right-contents__header__box__member-list_member
-            test-user
+          - @group.users.each do |user|
+            =user.name
       .right-contents__header__edit
         =link_to "/groups/1/edit/" do
           Edit
