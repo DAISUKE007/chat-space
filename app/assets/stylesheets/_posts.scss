@@ -181,13 +181,13 @@
           position: relative;
           width: 100%;
 
-          &__text {
-            height: 50px;
-            width: 100%;
-            padding-left: 10px;
-            color: #434a54;
-            border-style: none
-          }
+        .input-box__text {
+          height: 50px;
+          width: 100%;
+          padding-left: 10px;
+          color: #434a54;
+          border-style: none;
+        }
 
           &__image {
             font-size: 1.3rem;
