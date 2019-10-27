@@ -81,6 +81,10 @@
     }
   }
 
+  .groups::-webkit-scrollbar {
+    display:none;
+    }
+
   .right-contents {
     width: calc(100% - 300px);
     float: right;
@@ -156,60 +160,51 @@
           font-size: 14px;
           color: #434A54;
           margin-bottom: 10px;
-
-          // &__content {
-
-          // }
-
-          // &__image {
-
-          // }
         }
       }
     }
 
+    .messages::-webkit-scrollbar {
+      display:none;
+      }
+
+
+
     .form {
-      height: 90px;
-      padding: 20px 40px;
-      background-color: #ddd;
+      background-color: #DDDDDD;
       box-sizing: border-box;
-
-      .new_message {
-        display: flex;
-
-        .input-box {
-          position: relative;
-          width: 100%;
-
-        .input-box__text {
-          height: 50px;
-          width: 100%;
-          padding-left: 10px;
-          color: #434a54;
-          border-style: none;
+      height: 90px;
+      padding: 20px 50px 20px 40px;
+      &__message {
+        box-sizing: border-box;
+        padding-left: 10px;
+        border: none;
+        float: left;
+        height: 50px;
+        width: calc(100% - 150px);
+      }
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
         }
-
-          &__image {
-            font-size: 1.3rem;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-
-            &__file {
-              display: none;
-            }
-          } 
-        } 
-        .submit-btn {
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          margin-left: 15px;
-          background-color: #38aef0;
-          color: white;
-          cursor: pointer;
+        .hidden {
+          display: none;
         }
+      }
+      &__submit {
+        background-color: $light_blue;
+        border: none;
+        color: $white;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
       }
     }
   }
